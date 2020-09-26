@@ -1,0 +1,14 @@
+.card-header-icon .card-category{
+    color: #555555;
+    margin-bottom: 15px;
+}
+.card-header-icon .card-title{
+    margin-top: 5px;
+    margin-bottom: 0px;
+}
+.uppercase{
+    text-transform: uppercase;
+}
+.h5{
+    text-transform: uppercase;
+}
