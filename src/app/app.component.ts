@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { iStock } from './stock';
 import { Observable } from 'rxjs/Observable';
@@ -8,10 +8,12 @@ import { Observable } from 'rxjs/Observable';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent{
   url = 'https://stock-dash-backend.herokuapp.com/api';
   // items = [];
-  constructor(private http: HttpClient) {
+  constructor(
+    private http: HttpClient
+    ) {
     // this.http.get(this.url).toPromise().then(data => {
     //   console.log(data);
     // });

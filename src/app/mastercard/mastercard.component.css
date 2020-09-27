@@ -1,14 +1,17 @@
-.card-header-icon .card-category{
+.card-header-icon .card-category {
     color: #555555;
     margin-bottom: 15px;
 }
-.card-header-icon .card-title{
+
+.card-header-icon .card-title {
     margin-top: 5px;
     margin-bottom: 0px;
 }
-.uppercase{
+
+.uppercase {
     text-transform: uppercase;
 }
-.h5{
-    text-transform: uppercase;
+
+h6 {
+    font-weight: bold;
 }

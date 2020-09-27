@@ -8,10 +8,10 @@ declare interface RouteInfo {
   class: string;
 }
 export const ROUTES: RouteInfo[] = [
-  { path: '/MA', title: 'MASTERCARD', icon: 'dashboard', class: '' },
-  { path: '/ADBE', title: 'ADOBE', icon: 'dashboard', class: '' },
-  { path: '/USDJPY', title: 'USDJPY', icon: 'dashboard', class: '' },
-  { path: '/VIX', title: 'VIX', icon: 'dashboard', class: '' },
+  { path: '/MA', title: 'MASTERCARD', icon: 'https://s3-symbol-logo.tradingview.com/mastercard.svg', class: '' },
+  { path: '/ADBE', title: 'ADOBE', icon: 'https://s3-symbol-logo.tradingview.com/adobe.svg', class: '' },
+  { path: '/USDJPY', title: 'USDJPY', icon: 'https://s3-symbol-logo.tradingview.com/country/US.svg' , class: '' },
+  { path: '/VIX', title: 'VIX', icon: 'https://s3-symbol-logo.tradingview.com/country/US.svg', class: '' },
 ];
 
 @Component({
