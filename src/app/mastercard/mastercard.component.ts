@@ -15,7 +15,7 @@ export class mastercardComponent implements OnInit {
 	currPath;
 
 	// arrADBE: any[];
-	// arrMA: any[];
+	arrCHART: any[];
 	view: any[];
 
 	// options
