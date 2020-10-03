@@ -14,7 +14,7 @@
                                         <mat-datepicker #picker></mat-datepicker>
                                     </mat-form-field> -->
                                     <mat-form-field>
-                                        <input matInput type="date" placeholder="date" id="date" name="date" class="form-control"  formControlName="date" required>
+                                        <input matInput type="date" placeholder="Enter Date" id="date" name="date" class="form-control" formControlName="date" required>
                                     </mat-form-field>
                                     <mat-form-field>
                                         <mat-label>Select ticker</mat-label>
@@ -26,13 +26,13 @@
                                         </mat-select>
                                     </mat-form-field>
                                     <mat-form-field>
-                                        <input matInput type="number" placeholder="Open" id="open" name="open" class="form-control"  formControlName="open" required>
+                                        <input matInput type="number" placeholder="Open Price" id="open" name="open" class="form-control"  formControlName="open" required>
                                     </mat-form-field>
                                     <mat-form-field>
-                                        <input matInput type="number" placeholder="Close" id="close" name="close" class="form-control"  formControlName="close" required>
+                                        <input matInput type="number" placeholder="Close Price" id="close" name="close" class="form-control"  formControlName="close" required>
                                     </mat-form-field>
                                     <mat-form-field>
-                                        <input matInput type="number" placeholder="Predicted" id="predicted" name="predicted" class="form-control"  formControlName="predicted" required>
+                                        <input matInput type="number" placeholder="Predicted Price" id="predicted" name="predicted" class="form-control"  formControlName="predicted" required>
                                     </mat-form-field>
                                     <button type="submit" class="btn btn-success" [disabled]="!updateForm.valid">Update</button>
                                 </form>

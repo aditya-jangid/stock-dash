@@ -18,22 +18,31 @@
                 </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-12" >
-                <div class="card-columns">
-                <div class="card" *ngFor="let allData of retrievedReviews">
-                    <div class="card-body">
-                        <!-- Use <br> inside json -->
-                        <h3 class="font-weight-bold" [innerHTML]="allData.title"></h3>
-                        <p class="font-weight-bold" [innerHTML]="allData.review"></p>
+        <div *ngIf="loading else loaded">
+            <div class="d-flex justify-content-center">
+                <div class="spinner-border text-info" role="status" style="width: 5rem; height: 5rem;">
+                    <span class="sr-only">Loading...</span>
+                </div>
+            </div>
+        </div>
+        <ng-template #loaded>
+            <div class="row">
+                <div class="col-12">
+                    <div class="card-columns">
+                        <div class="card" *ngFor="let allData of retrievedReviews" @itemAnim>
+                            <div class="card-body">
+                                <!-- Use <br> inside json -->
+                                <h3 class="font-weight-bold" [innerHTML]="allData.title"></h3>
+                                <p class="font-weight-bold" [innerHTML]="allData.review"></p>
 
-                        <button mat-raised-button mat-min-fab (click)="deleteReview(allData._id)" class="btn btn-danger btn-just-icon btn-round float-right" >
-                            <i class="fa fa-trash"></i>
-                        </button>
+                                <button mat-raised-button mat-min-fab (click)="deleteReview(allData._id)" class="btn btn-danger btn-just-icon btn-round float-right">
+                                    <i class="fa fa-trash"></i>
+                                </button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-            </div>
-        </div>
+        </ng-template>
     </div>
 </div>

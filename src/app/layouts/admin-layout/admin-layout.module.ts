@@ -11,6 +11,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatSelectModule } from '@angular/material/select';
 import { MatNativeDateModule } from '@angular/material/core';
+import {MatPaginatorModule} from '@angular/material/paginator';
 
 import { MatDatepickerModule } from '@angular/material/datepicker';
 
@@ -35,7 +36,8 @@ import { ReviewComponent } from '../../review/review.component';
     MatTooltipModule,
     NgxChartsModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    MatPaginatorModule
   ],
   declarations: [
     mastercardComponent,

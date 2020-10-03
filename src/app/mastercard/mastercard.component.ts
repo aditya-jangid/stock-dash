@@ -4,15 +4,79 @@ import { Router } from '@angular/router';
 import { AppComponent } from '../app.component';
 import { data } from 'jquery';
 import { DatePipe } from '@angular/common';
+import {trigger, style, animate, transition} from '@angular/animations';
 
 @Component({
 	selector: 'app-mastercard',
 	templateUrl: './mastercard.component.html',
-	styleUrls: ['./mastercard.component.css']
+	styleUrls: ['./mastercard.component.css'],
+	animations: [
+		trigger('fade', [ 
+		  transition('void => *', [
+			style({ opacity: 0 }), 
+			animate(1000, style({opacity: 1}))
+		  ]) 
+		]),
+		trigger('itemAnim', [
+			// ENTRY ANIMATION
+			transition('void => *', [
+			  // Initial state
+			  style({
+				height: 0,
+				opacity: 0,
+				transform: 'scale(0.85)',
+				'margin-bottom': 0,
+	  
+				// we have to 'expand' out the padding properties
+				paddingTop: 0,
+				paddingBottom: 0,
+				paddingLeft: 0,
+				paddingRight: 0,
+			  }),
+			  // we first want to animate the spacing (which includes height and margin)
+			  animate('50ms', style({
+				height: '*',
+				'margin-bottom': '*',
+				paddingTop: '*',
+				paddingBottom: '*',
+				paddingLeft: '*',
+				paddingRight: '*',
+			  })),
+			  animate(200)
+			]),
+	  
+			transition('* => void', [
+			  // first scale up
+			  animate(50, style({
+				transform: 'scale(1.05)'
+			  })),
+			  // then scale down back to normal size while beginning to fade out
+			  animate(50, style({
+				transform: 'scale(1)',
+				opacity: 0.75
+			  })),
+			  // scale down and fade out completely
+			  animate('120ms ease-out', style({
+				transform: 'scale(0.68)',
+				opacity: 0,
+			  })),
+			  // then animate the spacing (which includes height, margin and padding)
+			  animate('150ms ease-out', style({
+				height: 0,
+				paddingTop: 0,
+				paddingBottom: 0,
+				paddingRight: 0,
+				paddingLeft: 0,
+				'margin-bottom': '0',
+			  }))
+			])
+		  ])
+	  ]
 })
 export class mastercardComponent implements OnInit {
 	retrievedData;
 	currPath;
+	loading = true;
 
 	// arrADBE: any[];
 	arrCHART: any[];
@@ -60,7 +124,7 @@ export class mastercardComponent implements OnInit {
 				//console.log('Output: ', arrCHART);
 				arrCHART.forEach((item) => {
 					item.series.sort((a, b) => new Date(a.name).getTime() - new Date(b.name).getTime())
-				  });
+				});
 				Object.assign(this, { arrCHART });
 			}).catch(err => console.error(err));
 
@@ -69,9 +133,10 @@ export class mastercardComponent implements OnInit {
 			this.retrievedData = data;
 			this.retrievedData.forEach((item) => {
 				item.timeseries.sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime());
-			  });
+			});
 			//console.log(this.retrievedData);
+			this.loading = false;
 		});
-		
+
 	}
 }

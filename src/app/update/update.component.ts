@@ -40,7 +40,7 @@ export class UpdateComponent implements OnInit {
         console.log(data);
         this.retrievedData = data;
       });
-      // this.updateForm.reset(this.updateForm.value);
+      this.updateForm.reset();
     }
   }
 
