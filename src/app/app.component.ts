@@ -10,7 +10,7 @@ import { Observable } from 'rxjs/Observable';
 })
 export class AppComponent{
   url = 'https://stock-dash-backend.herokuapp.com/api';
-  reviewsurl = 'http://localhost:8000/api/reviews';
+  reviewsurl = 'https://stock-dash-backend.herokuapp.com/api/reviews/'; //add forward slash
   // items = [];
   constructor(
     private http: HttpClient
@@ -24,5 +24,11 @@ export class AppComponent{
   }
   getReviews(): Observable<iReview[]> {
     return this.http.get<iReview[]>(this.reviewsurl);
+  }
+  createReview(reviewData:Object) {
+    return this.http.post(this.reviewsurl, reviewData);
+  }
+  deleteReview(id){
+    return this.http.delete(this.reviewsurl+id);
   }
 }

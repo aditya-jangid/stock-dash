@@ -14,5 +14,6 @@ export interface iStock {
 }
 
 export interface iReview {
-  review: String
+  review: String,
+  title: String
 }

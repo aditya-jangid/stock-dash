@@ -116,9 +116,9 @@
       background-image: $underline-background-image;
     }
 
-    &:invalid {
-      background-image: $underline-background-image-invalid;
-    }
+    // &:invalid {
+    //   background-image: $underline-background-image-invalid;
+    // }
 
     &:read-only {
       background-image: $underline-background-image-readonly;

@@ -5,24 +5,34 @@
                 <div class="card">
                     <div class="card-body">
                         <!-- Use <br> inside json -->
-                        <form>
+                        <form [formGroup]="reviewForm" (ngSubmit)="onSubmit()">
                             <mat-form-field>
-                                <textarea matInput placeholder="Enter Review" style="resize: both;"></textarea>
+                                <input matInput type="text" id="title" name="title" class="form-control" placeholder="Enter Title" formControlName="title" required>
                             </mat-form-field>
-                            <button type="submit" class="btn btn-success">Submit</button>
+                            <mat-form-field>
+                                <textarea matInput id="review" name="review" class="form-control" placeholder="Enter Review" mat-autosize formControlName="review" required></textarea>
+                            </mat-form-field>
+                            <button type="submit" class="btn btn-success" [disabled]="!reviewForm.valid">Submit</button>
                         </form>
                     </div>
                 </div>
             </div>
         </div>
         <div class="row">
-            <div class="col-lg-6" *ngFor="let allData of retrievedReviews">
-                <div class="card">
+            <div class="col-12" >
+                <div class="card-columns">
+                <div class="card" *ngFor="let allData of retrievedReviews">
                     <div class="card-body">
                         <!-- Use <br> inside json -->
-                        <p class="font-weight-bold text-center" [innerHTML]="allData.review"></p>
+                        <h3 class="font-weight-bold" [innerHTML]="allData.title"></h3>
+                        <p class="font-weight-bold" [innerHTML]="allData.review"></p>
+
+                        <button mat-raised-button mat-min-fab (click)="deleteReview(allData._id)" class="btn btn-danger btn-just-icon btn-round float-right" >
+                            <i class="fa fa-trash"></i>
+                        </button>
                     </div>
                 </div>
+            </div>
             </div>
         </div>
     </div>
