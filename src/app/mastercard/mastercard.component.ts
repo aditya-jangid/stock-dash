@@ -57,11 +57,21 @@ export class mastercardComponent implements OnInit {
 		fetch(`https://stock-dash-backend.herokuapp.com/api/chartDataby/${this.currPath}`)
 			.then(res => res.json())
 			.then((arrCHART) => {
-				// console.log('Output: ', out);
+				//console.log('Output: ', arrCHART);
+				arrCHART.forEach((item) => {
+					item.series.sort((a, b) => new Date(a.name).getTime() - new Date(b.name).getTime())
+				  });
 				Object.assign(this, { arrCHART });
 			}).catch(err => console.error(err));
 
 		//subscribe into retrievedData
-		this.AppComponent.getData().subscribe(data => this.retrievedData = data);
+		this.AppComponent.getData().subscribe(data => {
+			this.retrievedData = data;
+			this.retrievedData.forEach((item) => {
+				item.timeseries.sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime());
+			  });
+			//console.log(this.retrievedData);
+		});
+		
 	}
 }

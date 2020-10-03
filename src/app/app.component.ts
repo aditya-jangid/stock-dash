@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { iStock } from './stock';
+import { iReview, iStock } from './stock';
 import { Observable } from 'rxjs/Observable';
 
 @Component({
@@ -10,6 +10,7 @@ import { Observable } from 'rxjs/Observable';
 })
 export class AppComponent{
   url = 'https://stock-dash-backend.herokuapp.com/api';
+  reviewsurl = 'http://localhost:8000/api/reviews';
   // items = [];
   constructor(
     private http: HttpClient
@@ -20,5 +21,8 @@ export class AppComponent{
   }
   getData(): Observable<iStock[]> {
     return this.http.get<iStock[]>(this.url);
+  }
+  getReviews(): Observable<iReview[]> {
+    return this.http.get<iReview[]>(this.reviewsurl);
   }
 }

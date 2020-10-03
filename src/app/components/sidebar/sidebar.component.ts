@@ -12,6 +12,8 @@ export const ROUTES: RouteInfo[] = [
   { path: '/ADBE', title: 'ADOBE', icon: 'https://s3-symbol-logo.tradingview.com/adobe.svg', class: '' },
   { path: '/USDJPY', title: 'USDJPY', icon: 'https://s3-symbol-logo.tradingview.com/country/US.svg' , class: '' },
   { path: '/VIX', title: 'VIX', icon: 'https://s3-symbol-logo.tradingview.com/country/US.svg', class: '' },
+  { path: '/Update', title: 'UPDATE DAILY PRICES', icon: 'https://s3-symbol-logo.tradingview.com/country/US.svg', class: '' },
+  { path: '/Review', title: 'WEEKLY REVIEWS', icon: 'https://s3-symbol-logo.tradingview.com/country/US.svg', class: '' },
 ];
 
 @Component({

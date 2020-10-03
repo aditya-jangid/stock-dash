@@ -1,0 +1,41 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <br>
+                        <div class="row">
+                            <div class="col-md-4 mr-auto">
+                                <mat-form-field>
+                                    <input matInput [matDatepicker]="picker" placeholder="Choose a date" (click)="picker.open()">
+                                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                                    <mat-datepicker #picker></mat-datepicker>
+                                </mat-form-field>
+                                <mat-form-field>
+                                    <mat-label>Select ticker</mat-label>
+                                    <mat-select>
+                                        <mat-option value="MA">Mastercard</mat-option>
+                                        <mat-option value="ADBE">Adobe</mat-option>
+                                        <mat-option value="USDJPY">USDJPY</mat-option>
+                                        <mat-option value="VIX">CBOE VIX</mat-option>
+                                    </mat-select>
+                                </mat-form-field>
+                                <mat-form-field>
+                                    <input matInput type="number" placeholder="Open">
+                                </mat-form-field>
+                                <mat-form-field>
+                                    <input matInput type="number" placeholder="Close">
+                                </mat-form-field>
+                                <mat-form-field>
+                                    <input matInput type="number" placeholder="Predicted">
+                                </mat-form-field>
+                                <button type="submit" class="btn btn-success">Submit</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
