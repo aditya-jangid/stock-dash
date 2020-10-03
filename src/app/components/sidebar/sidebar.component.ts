@@ -10,10 +10,10 @@ declare interface RouteInfo {
 export const ROUTES: RouteInfo[] = [
   { path: '/MA', title: 'MASTERCARD', icon: 'https://s3-symbol-logo.tradingview.com/mastercard.svg', class: '' },
   { path: '/ADBE', title: 'ADOBE', icon: 'https://s3-symbol-logo.tradingview.com/adobe.svg', class: '' },
-  { path: '/USDJPY', title: 'USDJPY', icon: 'https://s3-symbol-logo.tradingview.com/country/US.svg' , class: '' },
+  { path: '/USDJPY', title: 'USDJPY', icon: '../../../assets/img/usdjpy.svg' , class: '' },
   { path: '/VIX', title: 'VIX', icon: 'https://s3-symbol-logo.tradingview.com/country/US.svg', class: '' },
-  { path: '/Update', title: 'UPDATE DAILY PRICES', icon: 'https://s3-symbol-logo.tradingview.com/country/US.svg', class: '' },
-  { path: '/Review', title: 'WEEKLY REVIEWS', icon: 'https://s3-symbol-logo.tradingview.com/country/US.svg', class: '' },
+  { path: '/Update', title: 'UPDATE DAILY PRICES', icon: '../../../assets/img/calendar.svg', class: '' },
+  { path: '/Review', title: 'WEEKLY REVIEWS', icon: '../../../assets/img/pen.svg', class: '' },
 ];
 
 @Component({

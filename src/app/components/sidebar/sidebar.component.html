@@ -14,7 +14,7 @@
     <ul class="nav">
         <li routerLinkActive="active" *ngFor="let menuItem of menuItems" class="{{menuItem.class}} nav-item">
             <a class="nav-link d-flex justify-items-between align-items-center" [routerLink]="[menuItem.path]">
-                <img [src]="menuItem.icon" class="mr-2 h-100">
+                <img [src]="menuItem.icon" class="mr-2 h-100" style="width: 2rem;">
                 <p class="text-center font-weight-bold">{{menuItem.title}}</p>
             </a>
         </li>

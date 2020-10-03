@@ -31,11 +31,12 @@ export class ReviewComponent implements OnInit {
 
 	onSubmit() {
 		if (this.reviewForm.value.review) {
-			console.log(this.reviewForm.value);
+			// console.log(this.reviewForm.value);
 			this.AppComponent.createReview(this.reviewForm.value).subscribe(data => {
-				console.log(data);
+				// console.log(data);
+				this.retrievedReviews.push(data);
 			});;
-			this.retrievedReviews.push(this.reviewForm.value);
+			this.reviewForm.reset(this.reviewForm.value); 
 		}
 	}
 

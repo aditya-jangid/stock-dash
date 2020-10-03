@@ -6,31 +6,36 @@
                     <div class="card-body">
                         <br>
                         <div class="row">
-                            <div class="col-md-4 mr-auto">
-                                <mat-form-field>
-                                    <input matInput [matDatepicker]="picker" placeholder="Choose a date" (click)="picker.open()">
-                                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-                                    <mat-datepicker #picker></mat-datepicker>
-                                </mat-form-field>
-                                <mat-form-field>
-                                    <mat-label>Select ticker</mat-label>
-                                    <mat-select>
-                                        <mat-option value="MA">Mastercard</mat-option>
-                                        <mat-option value="ADBE">Adobe</mat-option>
-                                        <mat-option value="USDJPY">USDJPY</mat-option>
-                                        <mat-option value="VIX">CBOE VIX</mat-option>
-                                    </mat-select>
-                                </mat-form-field>
-                                <mat-form-field>
-                                    <input matInput type="number" placeholder="Open">
-                                </mat-form-field>
-                                <mat-form-field>
-                                    <input matInput type="number" placeholder="Close">
-                                </mat-form-field>
-                                <mat-form-field>
-                                    <input matInput type="number" placeholder="Predicted">
-                                </mat-form-field>
-                                <button type="submit" class="btn btn-success">Submit</button>
+                            <div class="col-md-12 mr-auto">
+                                <form [formGroup]="updateForm" (ngSubmit)="onSubmit()">
+                                    <!-- <mat-form-field>
+                                        <input matInput [matDatepicker]="picker" placeholder="Choose a date" (click)="picker.open()" id="date" name="date" class="form-control"  formControlName="date" required>
+                                        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                                        <mat-datepicker #picker></mat-datepicker>
+                                    </mat-form-field> -->
+                                    <mat-form-field>
+                                        <input matInput type="date" placeholder="date" id="date" name="date" class="form-control"  formControlName="date" required>
+                                    </mat-form-field>
+                                    <mat-form-field>
+                                        <mat-label>Select ticker</mat-label>
+                                        <mat-select id="symbol" name="symbol" class="form-control"  formControlName="symbol" required>
+                                            <mat-option value="MA">Mastercard</mat-option>
+                                            <mat-option value="ADBE">Adobe</mat-option>
+                                            <mat-option value="USDJPY">USDJPY</mat-option>
+                                            <mat-option value="VIX">CBOE VIX</mat-option>
+                                        </mat-select>
+                                    </mat-form-field>
+                                    <mat-form-field>
+                                        <input matInput type="number" placeholder="Open" id="open" name="open" class="form-control"  formControlName="open" required>
+                                    </mat-form-field>
+                                    <mat-form-field>
+                                        <input matInput type="number" placeholder="Close" id="close" name="close" class="form-control"  formControlName="close" required>
+                                    </mat-form-field>
+                                    <mat-form-field>
+                                        <input matInput type="number" placeholder="Predicted" id="predicted" name="predicted" class="form-control"  formControlName="predicted" required>
+                                    </mat-form-field>
+                                    <button type="submit" class="btn btn-success" [disabled]="!updateForm.valid">Update</button>
+                                </form>
                             </div>
                         </div>
                     </div>
