@@ -114,8 +114,8 @@ export class mastercardComponent implements OnInit {
 		this.currPath = this.router.url.slice(1);
 		console.log(this.currPath);
 
-		if ($(window).width() > 991) {
-			this.view = [700, 400];
+		if ($(window).width() > 1091) {
+			this.view = [900, 500];
 		}
 
 		fetch(`https://stock-dash-backend.herokuapp.com/api/chartDataby/${this.currPath}`)
