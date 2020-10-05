@@ -90,9 +90,9 @@ export class mastercardComponent implements OnInit {
 	yAxis: boolean = true;
 	showYAxisLabel: boolean = true;
 	showXAxisLabel: boolean = true;
-	xAxisLabel: string = 'Date';
+	xAxisLabel: string = 'Dates';
 	yAxisLabel: string = 'Price($)';
-	timeline: boolean = true;
+	timeline: boolean = false;
 	autoScale: boolean = true;
 
 
