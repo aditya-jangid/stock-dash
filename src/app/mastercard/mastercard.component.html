@@ -3,40 +3,27 @@
         <div *ngIf="loading else loaded">
             <div class="d-flex justify-content-center">
                 <div class="spinner-border text-info" role="status" style="width: 5rem; height: 5rem;">
-                  <span class="sr-only">Loading...</span>
+                    <span class="sr-only">Loading...</span>
                 </div>
-              </div>
+            </div>
         </div>
         <ng-template #loaded>
             <div class="row" @itemAnim>
                 <div class="col-lg-12 col-md-12 col-sm-12">
-                    <div class="card" *ngFor="let allData of retrievedData">
-                        <div class="card-header card-header-warning card-header-icon" *ngIf="allData.symbol == currPath">
-                            <div class="card-icon">
-                                <img [src]="allData.logo" style="height: 4rem;" />
-                            </div>
-                            <h2 class="card-title font-weight-bold">{{ allData.name }}</h2>
-                            <p class="card-category">Ticker : {{ allData.symbol }}</p>
+                    <div class="card">
+                        <div class="card-header card-header-warning card-header-icon">
+                            <ng-container *ngFor="let allData of retrievedData">
+                                <ng-container *ngIf="allData.symbol == currPath">
+                                    <div class="card-icon">
+                                        <img [src]="allData.logo" style="height: 4rem;" />
+                                    </div>
+                                    <h2 class="card-title font-weight-bold">{{ allData.name }}</h2>
+                                    <p class="card-category">Ticker : {{ allData.symbol }}</p>
+                                </ng-container>
+                            </ng-container>
                         </div>
-                        <!-- <h2>{{ allData.name }}</h2>
-                        <img src={{allData.logo}} />
-                        <span>Symbol : {{ allData.symbol }}</span>
-                        <span>News : {{ allData.news[0] }}</span>
-                        <span>Standard Deviation : {{ allData.technical.stddev }}</span>
-                        <span>SMA : {{ allData.technical.sma }}</span>
-                        <div *ngFor="let closetimedata of allData.timeseries">
-                            <p>Closing Value : {{ closetimedata.close }}</p>
-                        </div>
-                        <div *ngFor="let factData of allData.facts">
-                            <p>Fact : {{ factData }}</p>
-                        </div> -->
                     </div>
                 </div>
-                <!-- <div class="card" *ngFor="let checkSymbol of retrievedData">
-                <div *ngIf="checkSymbol.symbol == 'ADBE'">
-                    {{ checkSymbol.name }}
-                </div>
-            </div> -->
             </div>
 
             <!-- STATISTICAL MEASURES -->
